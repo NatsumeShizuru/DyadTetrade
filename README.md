@@ -7,6 +7,8 @@ DyadTetrade 是一个 Paper-first 的 A 股交易执行与监控平台，聚焦�
 ## 5 分钟 Paper 演示
 
 ```powershell
+git clone https://github.com/NatsumeShizuru/DyadTetrade.git
+cd DyadTetrade
 py -3.12 -m venv .venv
 .venv\Scripts\python -m pip install -e ".[trading,dev]"
 $env:DYADTETRADE_EXECUTION_MODE = "paper"
@@ -46,7 +48,7 @@ flowchart LR
     B --> L["Ledger + Reconciliation + Monitoring"]
 ```
 
-DyadResearch 负责历史只读查询、PIT 财务、因子、回测、复现和研究报告。DyadTetrade 负责 XtData 下载/共享导入控制面，以及实时与交易状态。两个项目不互相导入 Python 代码；研究端通过 loopback HTTP 请求同一个数据控制面，研究成果仍只通过 `contracts/strategy-release-bundle.schema.json` 描述的版本化发布包进入执行端。
+[DyadResearch](https://github.com/NatsumeShizuru/DyadResearch) 负责历史只读查询、PIT 财务、因子、回测、复现和研究报告。DyadTetrade 负责 XtData 下载/共享导入控制面，以及实时与交易状态。两个项目不互相导入 Python 代码；研究端通过 loopback HTTP 请求同一个数据控制面，研究成果仍只通过 `contracts/strategy-release-bundle.schema.json` 描述的版本化发布包进入执行端。
 
 ## 主要能力
 
